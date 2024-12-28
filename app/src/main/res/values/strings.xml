@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">coffeeshop</string>
+
+    <!-- Splash Screen -->
+    <string name="tagLine">Brewing Happiness, One Cup at a Time.</string>
+    <string name="getStarted">Get Started</string>
+
+    <!-- Register Screen -->
+    <string name="email">Email</string>
+    <string name="password">password</string>
+    <string name="confirmPass">Confirm Password</string>
+    <string name="register">Register</string>"
+    <string name="alreadyHaveAccount">Already Have an Account?</string>
+    <string name="helloThere">Hello There</string>
+
+    <!-- Login Screen -->
+    <string name="login">Login</string>
+    <string name="forgotPassword">Forgot Password?</string>
+    <string name="createAccount">Create Account</string>
+    <string name="welcome">Welcome Back</string>
+</resources>
