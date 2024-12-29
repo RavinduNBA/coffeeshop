@@ -8,7 +8,7 @@
     <!-- Register Screen -->
     <string name="email">Email</string>
     <string name="username">Name</string>
-    <string name="password">password</string>
+    <string name="password">Password</string>
     <string name="confirmPass">Confirm Password</string>
     <string name="register">Register</string>"
     <string name="alreadyHaveAccount">Already Have an Account?</string>
@@ -19,4 +19,18 @@
     <string name="forgotPassword">Forgot Password?</string>
     <string name="createAccount">Create Account</string>
     <string name="welcome">Welcome Back</string>
+    
+    
+    <!-- User Dashboard -->
+    <string name="userDashboard">User Dashboard</string>
+    <string name="findYourVibe">Find Your Vibe</string>
+    <string name="profileIcon">ProfileIcon</string>
+    <string name="coffeeTypes">Expresso Latte Cappuccino Boba</string>
+    <string name="avacadoBoba">Avacado Boba</string>
+    <string name="withOatMilk">With oat milk</string>
+    <string name="val5_99">5.99</string>
+    <string name="mangoBoba">Mango Boba</string>
+    <string name="specialPicks">Special Picks</string>
+    <string name="specialPickTagLine">savor our signature blend, crafted just for you!</string>
+
 </resources>

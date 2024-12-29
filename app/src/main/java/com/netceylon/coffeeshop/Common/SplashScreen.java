@@ -3,6 +3,7 @@ package com.netceylon.coffeeshop.Common;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.LinearInterpolator;
@@ -16,6 +17,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.netceylon.coffeeshop.R;
+import com.netceylon.coffeeshop.User.UserDashboard;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -48,13 +50,18 @@ public class SplashScreen extends AppCompatActivity {
 
         login_button = findViewById(R.id.button);
 
-        login_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+//        login_button.setOnClickListener(v -> {
+//            Intent intent = new Intent(SplashScreen.this, Login.class);
+//            startActivity(intent);
+//            finish();
+//        });
+
+        login_button.setOnClickListener(v -> {
+            new Handler().postDelayed(() -> {
                 Intent intent = new Intent(SplashScreen.this, Login.class);
                 startActivity(intent);
                 finish();
-            }
+            }, 100); // Add a 100ms delay
         });
     }
 }
