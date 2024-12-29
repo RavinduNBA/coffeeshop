@@ -19,8 +19,8 @@
     <string name="forgotPassword">Forgot Password?</string>
     <string name="createAccount">Create Account</string>
     <string name="welcome">Welcome Back</string>
-    
-    
+
+
     <!-- User Dashboard -->
     <string name="userDashboard">User Dashboard</string>
     <string name="findYourVibe">Find Your Vibe</string>
@@ -33,5 +33,7 @@
     <string name="specialPicks">Special Picks</string>
     <string name="specialPickTagLine">savor our signature blend, crafted just for you!</string>
     <string name="explore_exclusive_offers">Explore Exclusive Offers!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
