@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:icon="@drawable/bottomnav_home"
+        android:title="Home" />
+    <item
+        android:icon="@drawable/bottomnav_bag"
+        android:title="Cart" />
+    <item
+        android:icon="@drawable/bottomnav_cup"
+        android:title="Coffee" />
+    <item
+        android:icon="@drawable/bottomnav_profile"
+        android:title="Profile" />
 </menu>
