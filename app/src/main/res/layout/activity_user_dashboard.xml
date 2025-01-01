@@ -126,7 +126,7 @@
 
 
                     <androidx.cardview.widget.CardView
-                        android:backgroundTint="@color/mainbrown"
+                        android:backgroundTint="@color/colorPrimary"
                         app:cardElevation="0dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -223,7 +223,7 @@
                     android:padding="20dp"
                     android:clipToPadding="false">
                     <androidx.cardview.widget.CardView
-                        android:backgroundTint="@color/mainpink"
+                        android:backgroundTint="@color/colorSecondary"
                         app:cardCornerRadius="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">

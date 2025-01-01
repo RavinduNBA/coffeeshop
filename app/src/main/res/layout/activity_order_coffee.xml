@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -199,8 +199,8 @@
                         android:layout_marginEnd="5dp"
                         android:text="S"
                         android:textSize="16sp"
-                        android:textColor="@color/mainpink"
-                        android:textColorHighlight="@color/mainbrown" />
+                        android:textColor="@color/colorSecondary"
+                        android:textColorHighlight="@color/colorPrimary" />
 
                     <Button
                         android:padding="10dp"
@@ -209,17 +209,17 @@
                         android:text="M"
                         android:layout_marginEnd="5dp"
                         android:textSize="16sp"
-                        android:textColor="@color/mainpink"
-                        android:textColorHighlight="@color/mainbrown"/>
+                        android:textColor="@color/colorSecondary"
+                        android:textColorHighlight="@color/colorPrimary"/>
                     <Button
                         android:padding="10dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:text="L"
                         android:layout_marginEnd="5dp"
-                        android:textColor="@color/mainpink"
+                        android:textColor="@color/colorSecondary"
                         android:textSize="16sp"
-                        android:textColorHighlight="@color/mainbrown"/>
+                        android:textColorHighlight="@color/colorPrimary"/>
 
 
                 </LinearLayout>
@@ -264,7 +264,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/minus_icon"
+                        android:background="@drawable/minus_icon"/>
 
 
                 </LinearLayout>
@@ -285,7 +285,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="40dp">
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp">
 
                 <TextView
                     android:id="@+id/priceText"
@@ -304,6 +305,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
+                            android:layout_margin="10dp"
                             android:layout_width="35dp"
                             android:layout_height="35dp"
                             android:src="@drawable/dollar_coin"/>
@@ -312,17 +314,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:layout_marginEnd="100dp"
+                            android:layout_marginEnd="50dp"
                             android:fontFamily="@font/capriola"
                             android:text="5.99"
                             android:textSize="40sp"/>
 
                         <Button
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentEnd="true"
+                            android:id="@+id/buttonbuynow"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Buy Now"/>
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/capriola"
+                            android:text="Buy Now"
+                            android:textSize="19sp" />
 
 
                 </LinearLayout>
@@ -342,4 +347,4 @@
 
 
 
-</RelativeLayout>
+</ScrollView>

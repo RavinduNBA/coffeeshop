@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.netceylon.coffeeshop.R;
+import com.netceylon.coffeeshop.User.OrderCoffee;
 import com.netceylon.coffeeshop.User.UserDashboard;
 
 public class Login extends AppCompatActivity {
@@ -48,7 +49,7 @@ public class Login extends AppCompatActivity {
         });
 
         forgot_button.setOnClickListener(v -> {
-            Intent intent = new Intent(Login.this, Register.class);
+            Intent intent = new Intent(Login.this, OrderCoffee.class);
             startActivity(intent);
         });
 

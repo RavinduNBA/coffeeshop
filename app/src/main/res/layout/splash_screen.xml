@@ -42,7 +42,7 @@
         android:layout_width="160dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/mainbrown"
+        android:backgroundTint="@color/colorPrimary"
         android:text="@string/getStarted"
         android:textColor="@color/white"
         android:textSize="16sp"

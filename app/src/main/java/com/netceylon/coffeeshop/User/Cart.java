@@ -1,40 +1,25 @@
 package com.netceylon.coffeeshop.User;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.netceylon.coffeeshop.Common.Login;
-import com.netceylon.coffeeshop.Common.Register;
 import com.netceylon.coffeeshop.R;
 
-public class OrderCoffee extends AppCompatActivity {
-
-    Button buy_now;
-
+public class Cart extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_order_coffee);
+        setContentView(R.layout.activity_cart);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
-
-        buy_now = findViewById(R.id.buttonbuynow);
-
-        buy_now.setOnClickListener(v -> {
-            Intent intent = new Intent(OrderCoffee.this, Cart.class);
-            startActivity(intent);
         });
     }
 }
