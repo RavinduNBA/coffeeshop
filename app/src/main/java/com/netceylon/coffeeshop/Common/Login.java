@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.netceylon.coffeeshop.R;
 import com.netceylon.coffeeshop.User.OrderCoffee;
+import com.netceylon.coffeeshop.User.UserActivity;
 import com.netceylon.coffeeshop.User.UserDashboard;
 
 public class Login extends AppCompatActivity {
@@ -42,7 +43,7 @@ public class Login extends AppCompatActivity {
 
         login_button.setOnClickListener(v -> {
             new Handler().postDelayed(() -> {
-                Intent intent = new Intent(Login.this, UserDashboard.class);
+                Intent intent = new Intent(Login.this, UserActivity.class);
                 startActivity(intent);
                 finish();
             }, 100); // Add a 100ms delay

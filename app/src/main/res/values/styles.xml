@@ -18,4 +18,6 @@
         <item name="itemTextAppearanceInactive">@style/TextAppearance.AppCompat.Caption</item>
         <item name="itemTextAppearanceActive">@style/TextAppearance.AppCompat.Caption</item>
     </style>
+
+
 </resources>
