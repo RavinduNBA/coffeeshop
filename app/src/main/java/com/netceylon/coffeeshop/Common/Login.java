@@ -50,7 +50,7 @@ public class Login extends AppCompatActivity {
         });
 
         forgot_button.setOnClickListener(v -> {
-            Intent intent = new Intent(Login.this, OrderCoffee.class);
+            Intent intent = new Intent(Login.this, Register.class);
             startActivity(intent);
         });
 

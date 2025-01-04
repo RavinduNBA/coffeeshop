@@ -16,7 +16,9 @@
         android:text="Cart"
         android:textSize="32sp"
         android:fontFamily="@font/roboto"
-        android:layout_margin="20dp"/>
+        android:padding="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"/>
 
     <ScrollView
         android:id="@+id/scrollList"
@@ -285,8 +287,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:alpha="@dimen/fab_margin"
         android:backgroundTint="#00FFFFFF"
-        android:text="Back to Shopping" />
+        android:text="Back to Shopping"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 
 
