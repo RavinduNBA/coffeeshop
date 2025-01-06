@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import com.google.android.material.tabs.TabLayout;
 import com.netceylon.coffeeshop.R;
 import com.netceylon.coffeeshop.User.MyViewPagerAdapter;
+import com.netceylon.coffeeshop.User.UserActivity;
 
 
 public class HomeFragment extends Fragment {
@@ -46,6 +47,8 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+
+
         // Set fullscreen flags (if needed)
         requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -68,12 +71,9 @@ public class HomeFragment extends Fragment {
         imageView = view.findViewById(R.id.specialPicsAdd);
 
         imageView.setOnClickListener(v -> {
-            if (getActivity() != null) {
-                Fragment buyNowFragment = new BuyNowFragment();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, buyNowFragment)
-                        .addToBackStack(null)
-                        .commit();
+            if (getActivity() instanceof UserActivity) {
+                UserActivity activity = (UserActivity) getActivity();
+                activity.navigateToFragment(new BuyNowFragment(), R.id.buynow);
             }
         });
 
@@ -108,5 +108,9 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+
+
     }
+
+
 }

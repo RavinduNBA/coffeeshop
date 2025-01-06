@@ -51,12 +51,14 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:clipToPadding="false"
                 android:id="@+id/cardScroll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="0dp">
 
                 <com.google.android.material.tabs.TabLayout
+                    android:clipToPadding="false"
                     android:id="@+id/tablayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -88,11 +90,13 @@
                 </com.google.android.material.tabs.TabLayout>
 
                 <androidx.viewpager2.widget.ViewPager2
+                    android:clipToPadding="false"
                     android:id="@+id/viewPager"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tablayout"
-                    android:elevation="0dp" />
+                    android:elevation="0dp"
+                    />
 
 
             </RelativeLayout>

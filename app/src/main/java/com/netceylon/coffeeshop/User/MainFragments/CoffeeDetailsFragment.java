@@ -1,29 +1,24 @@
 package com.netceylon.coffeeshop.User.MainFragments;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.netceylon.coffeeshop.R;
-import com.netceylon.coffeeshop.User.UserActivity;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link CartFragment#newInstance} factory method to
+ * Use the {@link CoffeeDetailsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-
-
-public class CartFragment extends Fragment {
-
-    Button backtoshopping;
+public class CoffeeDetailsFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +29,7 @@ public class CartFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public CartFragment() {
+    public CoffeeDetailsFragment() {
         // Required empty public constructor
     }
 
@@ -44,11 +39,11 @@ public class CartFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CartFragment.
+     * @return A new instance of fragment CoffeeDetailsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CartFragment newInstance(String param1, String param2) {
-        CartFragment fragment = new CartFragment();
+    public static CoffeeDetailsFragment newInstance(String param1, String param2) {
+        CoffeeDetailsFragment fragment = new CoffeeDetailsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -69,24 +64,29 @@ public class CartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cart, container, false);
+        return inflater.inflate(R.layout.fragment_coffee_details, container, false);
 
     }
 
+    public void updateCoffeeDetails(Drawable imageResource, String name, String toast, String milk, String description) {
+        // Update the coffee image
+        ImageView coffeeImage = requireView().findViewById(R.id.coffeeImage);
+        coffeeImage.setImageDrawable(imageResource);
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        // Update the coffee name
+        TextView coffeeName = requireView().findViewById(R.id.coffeeName);
+        coffeeName.setText(name);
 
-        // Set up button and its click listener
-        backtoshopping = view.findViewById(R.id.backToShopping);
+        // Update the toast text
+        TextView toastText = requireView().findViewById(R.id.toastText);
+        toastText.setText(toast);
 
-        backtoshopping.setOnClickListener(v -> {
-            if (getActivity() instanceof UserActivity) {
-                UserActivity activity = (UserActivity) getActivity();
-                activity.navigateToFragment(new HomeFragment(), R.id.homeIcon);
-            }
-        });
+        // Update the milk name
+        TextView milkName = requireView().findViewById(R.id.milkName);
+        milkName.setText(milk);
 
+        // Update the description text
+        TextView descriptionText = requireView().findViewById(R.id.descriptionText);
+        descriptionText.setText(description);
     }
 }

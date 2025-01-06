@@ -42,18 +42,13 @@ public class BuyNowFragment extends Fragment {
 
         // Set up button and its click listener
         buy_now = view.findViewById(R.id.buttonbuynow);
+
         buy_now.setOnClickListener(v -> {
-            if (getActivity() != null) {
-                Fragment cartFragment = new CartFragment();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, cartFragment)
-                        .addToBackStack(null)
-                        .commit();
+            if (getActivity() instanceof UserActivity) {
+                UserActivity activity = (UserActivity) getActivity();
+                activity.navigateToFragment(new CartFragment(), R.id.cartIcon);
             }
         });
-        if (getActivity() instanceof UserActivity) {
-            ((UserActivity) getActivity()).updateBottomNavigation(R.id.cartIcon);
-        }
 
     }
 }

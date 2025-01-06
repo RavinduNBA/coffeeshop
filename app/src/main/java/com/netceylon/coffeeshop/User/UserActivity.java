@@ -16,6 +16,9 @@ public class UserActivity extends AppCompatActivity {
 
 
     ActivityUserBinding binding;
+    public void selectBottomNavigationViewItem(int itemId) {
+        binding.bottomNavigationView.setSelectedItemId(itemId);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +62,16 @@ public class UserActivity extends AppCompatActivity {
 
     }
 
-    public void updateBottomNavigation(int itemId) {
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        if (bottomNavigationView != null) {
-            bottomNavigationView.setSelectedItemId(itemId);
-        }
+    public void navigateToFragment(Fragment fragment, int bottomNavigationItemId) {
+        // Replace the fragment
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit();
+
+        // Update the BottomNavigationView selection
+        binding.bottomNavigationView.setSelectedItemId(bottomNavigationItemId);
     }
 
 }
