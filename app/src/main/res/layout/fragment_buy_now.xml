@@ -26,6 +26,7 @@
             app:cardElevation="0dp">
 
             <ImageView
+                android:id="@+id/coffeeImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -107,6 +108,7 @@
                         android:gravity="center_vertical">
 
                         <TextView
+                            android:id="@+id/toastText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="10dp"
@@ -123,7 +125,6 @@
 
 
                     <LinearLayout
-                        android:id="@+id/milkName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/toastName"
@@ -132,6 +133,7 @@
                         android:gravity="center_vertical">
 
                         <TextView
+                            android:id="@+id/milkName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="10dp"
@@ -164,6 +166,7 @@
             android:textSize="20sp"/>
 
         <TextView
+            android:id="@+id/descriptionText"
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
@@ -320,6 +323,7 @@
                         android:src="@drawable/dollar_coin"/>
 
                     <TextView
+                        android:id="@+id/priceValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"

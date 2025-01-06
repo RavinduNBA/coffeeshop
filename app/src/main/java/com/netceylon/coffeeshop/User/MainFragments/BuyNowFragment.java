@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.netceylon.coffeeshop.R;
@@ -50,5 +52,27 @@ public class BuyNowFragment extends Fragment {
             }
         });
 
+    }
+
+    private void updateCoffeeDetails(int imageResource, String name, String toast, String milk, String description) {
+        // Update the coffee image
+        ImageView coffeeImage = requireView().findViewById(R.id.coffeeImage);
+        coffeeImage.setImageResource(imageResource);
+
+        // Update the coffee name
+        TextView coffeeName = requireView().findViewById(R.id.coffeeName);
+        coffeeName.setText(name);
+
+        // Update the toast text
+        TextView toastText = requireView().findViewById(R.id.toastText);
+        toastText.setText(toast);
+
+        // Update the milk name
+        TextView milkName = requireView().findViewById(R.id.milkName);
+        milkName.setText(milk);
+
+        // Update the description text
+        TextView descriptionText = requireView().findViewById(R.id.descriptionText);
+        descriptionText.setText(description);
     }
 }

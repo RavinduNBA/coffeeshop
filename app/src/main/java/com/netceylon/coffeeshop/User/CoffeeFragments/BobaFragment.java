@@ -41,17 +41,15 @@ public class BobaFragment extends Fragment {
         imageView.setOnClickListener(v -> {
             if (getActivity() instanceof UserActivity) {
                 UserActivity activity = (UserActivity) getActivity();
-                activity.navigateToFragment(new BuyNowFragment(), R.id.buynow);
-
-                CoffeeDetailsFragment coffeeDetailsFragment = (CoffeeDetailsFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.coffeeDetailsFragment);
-                if (coffeeDetailsFragment != null) {
-
-                    Drawable boba1 = ResourcesCompat. getDrawable(getResources(), R.drawable.boba1, null);
-
-
-
-                    coffeeDetailsFragment.updateCoffeeDetails(boba1, "coffeeName", "milkName", "coffeePrice", "Description");
-                }
+                Drawable boba1 = ResourcesCompat.getDrawable(getResources(), R.drawable.boba1, null);
+                CoffeeDetailsFragment coffeeDetailsFragment = CoffeeDetailsFragment.newInstance(
+                        R.drawable.boba1,
+                        "Coffee Name",
+                        "Toast Text",
+                        "Milk Name",
+                        "Description"
+                );
+                activity.navigateToFragment(coffeeDetailsFragment, R.id.buynow);
             }
         });
     }

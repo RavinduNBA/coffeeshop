@@ -1,8 +1,13 @@
 package com.netceylon.coffeeshop.User.MainFragments;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -13,40 +18,28 @@ import android.widget.TextView;
 
 import com.netceylon.coffeeshop.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CoffeeDetailsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CoffeeDetailsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    // Member variables to store arguments
+    private Drawable imageResource;
+    private String name;
+    private String toast;
+    private String milk;
+    private String description;
 
     public CoffeeDetailsFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CoffeeDetailsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CoffeeDetailsFragment newInstance(String param1, String param2) {
+    public static CoffeeDetailsFragment newInstance(int imageResourceId, String name, String toast, String milk, String description) {
         CoffeeDetailsFragment fragment = new CoffeeDetailsFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putInt("imageResourceId", imageResourceId); // Use resource ID
+        args.putString("name", name);
+        args.putString("toast", toast);
+        args.putString("milk", milk);
+        args.putString("description", description);
         fragment.setArguments(args);
         return fragment;
     }
@@ -55,8 +48,13 @@ public class CoffeeDetailsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            // Load arguments into member variables
+            int imageResourceId = getArguments().getInt("imageResourceId");
+            imageResource = ResourcesCompat.getDrawable(getResources(), imageResourceId, null);
+            name = getArguments().getString("name");
+            toast = getArguments().getString("toast");
+            milk = getArguments().getString("milk");
+            description = getArguments().getString("description");
         }
     }
 
@@ -65,28 +63,36 @@ public class CoffeeDetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_coffee_details, container, false);
-
     }
 
-    public void updateCoffeeDetails(Drawable imageResource, String name, String toast, String milk, String description) {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        // Update views now that the layout is fully created
+        updateCoffeeDetails(view);
+    }
+
+    private void updateCoffeeDetails(View view) {
         // Update the coffee image
-        ImageView coffeeImage = requireView().findViewById(R.id.coffeeImage);
-        coffeeImage.setImageDrawable(imageResource);
+        ImageView coffeeImage = view.findViewById(R.id.coffeeImage);
+        if (imageResource != null) {
+            coffeeImage.setImageDrawable(imageResource);
+        }
 
         // Update the coffee name
-        TextView coffeeName = requireView().findViewById(R.id.coffeeName);
+        TextView coffeeName = view.findViewById(R.id.coffeeName);
         coffeeName.setText(name);
 
         // Update the toast text
-        TextView toastText = requireView().findViewById(R.id.toastText);
+        TextView toastText = view.findViewById(R.id.toastText);
         toastText.setText(toast);
 
         // Update the milk name
-        TextView milkName = requireView().findViewById(R.id.milkName);
+        TextView milkName = view.findViewById(R.id.milkName);
         milkName.setText(milk);
 
         // Update the description text
-        TextView descriptionText = requireView().findViewById(R.id.descriptionText);
+        TextView descriptionText = view.findViewById(R.id.descriptionText);
         descriptionText.setText(description);
     }
 }
