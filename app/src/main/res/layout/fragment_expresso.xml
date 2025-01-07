@@ -73,10 +73,10 @@
                         android:text="@string/val5_99" />
 
                     <ImageView
+                        android:id="@+id/addIcon1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
                         android:padding="5dp"
                         android:src="@drawable/add_circle" />
 
@@ -147,6 +147,7 @@
                         android:text="@string/val5_99" />
 
                     <ImageView
+                        android:id="@+id/addIcon2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"

@@ -41,7 +41,7 @@ public class UserActivity extends AppCompatActivity {
             } else if (id == R.id.cartIcon) {
                 replaceFragment(new CartFragment());
             } else if (id == R.id.buynow) {
-                replaceFragment(new BuyNowFragment());
+                replaceFragment(new CoffeeDetailsFragment());
             } else if (id == R.id.profile) {
                 replaceFragment(new ProfileFragment());
             }
@@ -71,7 +71,13 @@ public class UserActivity extends AppCompatActivity {
                 .commit();
 
         // Update the BottomNavigationView selection
-        binding.bottomNavigationView.setSelectedItemId(bottomNavigationItemId);
+        //binding.bottomNavigationView.setSelectedItemId(bottomNavigationItemId);
+        highlightMenuItem(bottomNavigationItemId);
+    }
+
+    public void highlightMenuItem(int bottomNavigationItemId) {
+        // Highlight the menu item manually
+        binding.bottomNavigationView.getMenu().findItem(bottomNavigationItemId).setChecked(true);
     }
 
 }

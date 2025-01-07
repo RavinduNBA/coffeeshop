@@ -13,15 +13,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.netceylon.coffeeshop.R;
+import com.netceylon.coffeeshop.User.UserActivity;
 
 
 public class CoffeeDetailsFragment extends Fragment {
 
     // Member variables to store arguments
+    Button buy_now;
     private Drawable imageResource;
     private String name;
     private String toast;
@@ -68,6 +71,15 @@ public class CoffeeDetailsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        buy_now = view.findViewById(R.id.buttonbuynow);
+
+        buy_now.setOnClickListener(v -> {
+            if (getActivity() instanceof UserActivity) {
+                UserActivity activity = (UserActivity) getActivity();
+                activity.navigateToFragment(new CartFragment(), R.id.cartIcon);
+            }
+        });
         // Update views now that the layout is fully created
         updateCoffeeDetails(view);
     }
