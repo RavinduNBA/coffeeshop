@@ -128,7 +128,7 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:backgroundTint="@color/colorPrimary"
+                    style="@style/CustomCardStyleSP"
                     app:cardElevation="0dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -136,6 +136,7 @@
 
 
                     <LinearLayout
+                        android:theme="@style/CardTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
@@ -160,7 +161,6 @@
                                 android:fontFamily="@font/roboto"
                                 android:paddingTop="10dp"
                                 android:text="@string/specialPickTagLine"
-                                android:textColor="@color/white"
                                 android:textSize="14sp" />
 
                             <LinearLayout
@@ -180,8 +180,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingStart="10dp"
                                     android:paddingEnd="20dp"
-                                    android:text="@string/val5_99"
-                                    android:textColor="@color/white" />
+                                    android:text="@string/val5_99" />
 
                             </LinearLayout>
 
@@ -227,6 +226,7 @@
                     android:layout_height="wrap_content">
 
                     <LinearLayout
+                        android:theme="@style/CardTextStyle"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:layout_width="wrap_content"

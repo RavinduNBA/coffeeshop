@@ -17,6 +17,7 @@
         <item name="itemPaddingBottom">0dp</item>
         <item name="itemTextAppearanceInactive">@style/TextAppearance.AppCompat.Caption</item>
         <item name="itemTextAppearanceActive">@style/TextAppearance.AppCompat.Caption</item>
+        <item name="background">@style/bottomNavStyle</item>
     </style>
 
 

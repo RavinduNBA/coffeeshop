@@ -49,6 +49,7 @@
             app:contentPaddingTop="10dp">
 
             <LinearLayout
+                android:theme="@style/CardTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
@@ -212,7 +213,6 @@
                         android:layout_marginEnd="5dp"
                         android:text="S"
                         android:textSize="16sp"
-                        android:textColor="@color/colorSecondary"
                         android:textColorHighlight="@color/colorPrimary" />
 
                     <Button
@@ -222,7 +222,6 @@
                         android:text="M"
                         android:layout_marginEnd="5dp"
                         android:textSize="16sp"
-                        android:textColor="@color/colorSecondary"
                         android:textColorHighlight="@color/colorPrimary"/>
                     <Button
                         android:padding="10dp"
@@ -230,7 +229,6 @@
                         android:layout_height="50dp"
                         android:text="L"
                         android:layout_marginEnd="5dp"
-                        android:textColor="@color/colorSecondary"
                         android:textSize="16sp"
                         android:textColorHighlight="@color/colorPrimary"/>
 
@@ -255,6 +253,7 @@
                     android:text="Quantity"
                     android:textSize="16sp"/>
                 <LinearLayout
+                    android:theme="@style/iconColorStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/quantityText"
@@ -318,10 +317,10 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_margin="10dp"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/dollar_coin"/>
+                        android:layout_margin="10dp"
+                        android:src="@drawable/dollar_coin" />
 
                     <TextView
                         android:layout_width="wrap_content"

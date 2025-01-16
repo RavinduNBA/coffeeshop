@@ -16,6 +16,7 @@
 
 
         <androidx.cardview.widget.CardView
+            style="@style/CustomCardStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -25,6 +26,7 @@
             app:cardElevation="10dp">
 
             <LinearLayout
+                android:theme="@style/CardTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -91,6 +93,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            style="@style/CustomCardStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -100,6 +103,7 @@
             app:cardElevation="10dp">
 
             <LinearLayout
+                android:theme="@style/CardTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

@@ -26,6 +26,7 @@
                 android:paddingBottom="20dp">
 
                 <androidx.cardview.widget.CardView
+                    style="@style/CustomCardStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -34,6 +35,7 @@
                     app:cardElevation="10dp">
 
                     <LinearLayout
+                        android:theme="@style/CardTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -91,15 +93,16 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
-                                android:padding="5dp"
-                                android:src="@drawable/add_circle"
                                 android:clickable="true"
-                                android:focusable="true"/>
+                                android:focusable="true"
+                                android:padding="5dp"
+                                android:src="@drawable/add_circle" />
                         </RelativeLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    style="@style/CustomCardStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -108,6 +111,7 @@
                     app:cardElevation="10dp">
 
                     <LinearLayout
+                        android:theme="@style/CardTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"

@@ -60,6 +60,7 @@
                         android:textSize="16sp" />
 
                     <LinearLayout
+                        android:theme="@style/iconColorStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/quantityText"
@@ -126,6 +127,7 @@
                         android:textSize="16sp" />
 
                     <LinearLayout
+                        android:theme="@style/iconColorStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/quantityText"
@@ -192,6 +194,7 @@
                         android:textSize="16sp" />
 
                     <LinearLayout
+                        android:theme="@style/iconColorStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/quantityText"
@@ -280,13 +283,12 @@
         android:text="CHECKOUT"/>
 
     <Button
+        style="@style/CustomButtonStyle2"
         android:id="@+id/backToShopping"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="#00FFFFFF"
-        android:text="Back to Shopping"
-        android:textColor="@color/design_default_color_on_secondary" />
+        android:text="Back to Shopping"/>
 
 </RelativeLayout>
