@@ -39,7 +39,7 @@ public class UserActivity extends AppCompatActivity {
             if (id == R.id.homeIcon) {
                 replaceFragment(new HomeFragment());
             } else if (id == R.id.cartIcon) {
-                replaceFragment(new CartFragment());
+                replaceFragment(new SpecialOffersFragment());
             } else if (id == R.id.buynow) {
                 replaceFragment(new CoffeeDetailsFragment());
             } else if (id == R.id.profile) {
