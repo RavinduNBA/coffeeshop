@@ -21,6 +21,7 @@
         app:srcCompat="@drawable/login_bg" />
 
     <LinearLayout
+        style="@style/bgOpacity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -36,7 +37,6 @@
             android:layout_marginTop="200dp"
             android:fontFamily="@font/roboto"
             android:text="Welcome Back"
-            android:textColor="#000000"
             android:textSize="32sp"
             android:textStyle="bold" />
 
@@ -49,12 +49,11 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/textInputStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:hint="@string/email"
-                app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomEnd="20dp"
                 app:boxCornerRadiusBottomStart="20dp"
@@ -73,12 +72,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/textInputStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:hint="@string/password"
-                app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomEnd="20dp"
                 app:boxCornerRadiusBottomStart="20dp"
@@ -93,46 +91,41 @@
                     android:layout_height="wrap_content"
                     android:elevation="2dp"
                     android:fontFamily="@font/roboto"
-                    android:inputType="textPassword"
-                    android:textColor="#D3D3D3" />
+                    android:inputType="textPassword" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonregister"
-                style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
+                style="@style/CustomButtonStyle3"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:backgroundTint="#ECE0D1"
                 android:elevation="8dp"
                 android:fontFamily="@font/roboto"
-                android:text="@string/login"
-                android:textColor="#000000" />
+                android:text="@string/login" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <Button
+                    style="@style/CustomButtonStyle2"
                     android:id="@+id/buttonforgot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#00FFFFFF"
                     android:fontFamily="@font/roboto"
-                    android:text="@string/forgotPassword"
-                    android:textColor="#070707" />
+                    android:text="@string/forgotPassword" />
 
                 <Button
+                    style="@style/CustomButtonStyle2"
                     android:id="@+id/buttoncreateaccount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#00FFFFFF"
                     android:fontFamily="@font/roboto"
-                    android:text="@string/createAccount"
-                    android:textColor="#070707" />
+                    android:text="@string/createAccount"/>
 
             </LinearLayout>
 
