@@ -37,7 +37,6 @@
             android:layout_marginTop="100dp"
             android:fontFamily="@font/roboto"
             android:text="@string/helloThere"
-            android:textColor="#000000"
             android:textSize="32sp"
             android:textStyle="bold" />
 

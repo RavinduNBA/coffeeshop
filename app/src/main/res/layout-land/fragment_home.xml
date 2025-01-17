@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".User.MainFragments.HomeFragment">
+
+    <ImageView
+        android:id="@+id/userProfile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="@string/profileIcon"
+        android:src="@drawable/user_profile_circle" />
+
+
+    <ScrollView
+        android:layout_marginTop="-40dp"
+        android:id="@+id/scrollView"
+        android:layout_below="@id/userProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/findYourVibe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/roboto"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="80dp"
+                    android:text="@string/findYourVibe"
+                    android:textSize="24sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_gravity="center_horizontal"
+                android:clipToPadding="false"
+                android:id="@+id/cardScroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="0dp">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:clipToPadding="false"
+                    android:id="@+id/tablayout"
+                    android:layout_width="600dp"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:elevation="0dp"
+                    app:tabIndicator="@drawable/tabindicator">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Expresso" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Latte" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cappucino" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Boba" />
+
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:clipToPadding="false"
+                    android:id="@+id/viewPager"
+                    android:layout_width="600dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tablayout"
+                    android:elevation="0dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/roboto"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="80dp"
+                    android:text="@string/specialPicks"
+                    android:textSize="24sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_gravity="center"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:clipToPadding="false">
+
+
+                <androidx.cardview.widget.CardView
+                    style="@style/CustomCardStyleSP"
+                    app:cardElevation="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp">
+
+
+                    <LinearLayout
+                        android:theme="@style/CardTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="20dp">
+
+                        <ImageView
+                            android:id="@+id/specialCoffeeImageview"
+                            android:layout_width="165dp"
+                            android:layout_height="125dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/cofeecup1_1" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingStart="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:paddingTop="10dp"
+                                android:text="@string/specialPickTagLine"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:paddingTop="20dp"
+                                android:gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/dollar_coin_black" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="20dp"
+                                    android:text="@string/val5_99" />
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/specialPicsAdd"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:src="@drawable/add_circle"
+                                    android:clickable="true"
+                                    android:focusable="true"/>
+
+                            </RelativeLayout>
+
+
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:clipToPadding="false">
+                <androidx.cardview.widget.CardView
+                    android:backgroundTint="@color/colorSecondary"
+                    app:cardCornerRadius="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:theme="@style/CardTextStyle"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="20sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/explore_exclusive_offers"/>
+
+                        <ImageView
+                            android:layout_width="66dp"
+                            android:layout_height="95dp"
+                            android:src="@drawable/tallcofeecup" />
+                        <ImageView
+                            android:layout_marginEnd="10dp"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:src="@drawable/discount_star_03"/>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+</RelativeLayout>

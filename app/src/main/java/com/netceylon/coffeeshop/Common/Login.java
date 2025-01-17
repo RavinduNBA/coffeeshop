@@ -12,9 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.netceylon.coffeeshop.R;
-import com.netceylon.coffeeshop.User.OrderCoffee;
 import com.netceylon.coffeeshop.User.UserActivity;
-import com.netceylon.coffeeshop.User.UserDashboard;
 
 public class Login extends AppCompatActivity {
 

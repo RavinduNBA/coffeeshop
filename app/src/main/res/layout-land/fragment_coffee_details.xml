@@ -2,13 +2,13 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/coffeeDetailsFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.MainFragments.BuyNowFragment">
+    tools:context=".User.MainFragments.CoffeeDetailsFragment">
 
     <LinearLayout
-        android:layout_marginTop="20dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
@@ -26,6 +26,7 @@
             app:cardElevation="0dp">
 
             <ImageView
+                android:layout_gravity="center"
                 android:id="@+id/coffeeImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,6 +49,7 @@
             app:contentPaddingTop="10dp">
 
             <LinearLayout
+                android:theme="@style/CardTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
@@ -211,7 +213,6 @@
                         android:layout_marginEnd="5dp"
                         android:text="S"
                         android:textSize="16sp"
-                        android:textColor="@color/colorSecondary"
                         android:textColorHighlight="@color/colorPrimary" />
 
                     <Button
@@ -221,7 +222,6 @@
                         android:text="M"
                         android:layout_marginEnd="5dp"
                         android:textSize="16sp"
-                        android:textColor="@color/colorSecondary"
                         android:textColorHighlight="@color/colorPrimary"/>
                     <Button
                         android:padding="10dp"
@@ -229,7 +229,6 @@
                         android:layout_height="50dp"
                         android:text="L"
                         android:layout_marginEnd="5dp"
-                        android:textColor="@color/colorSecondary"
                         android:textSize="16sp"
                         android:textColorHighlight="@color/colorPrimary"/>
 
@@ -254,6 +253,7 @@
                     android:text="Quantity"
                     android:textSize="16sp"/>
                 <LinearLayout
+                    android:theme="@style/iconColorStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/quantityText"
@@ -317,13 +317,12 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_margin="10dp"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/dollar_coin"/>
+                        android:layout_margin="10dp"
+                        android:src="@drawable/dollar_coin" />
 
                     <TextView
-                        android:id="@+id/priceValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -357,5 +356,6 @@
 
 
     </LinearLayout>
+
 
 </ScrollView>
