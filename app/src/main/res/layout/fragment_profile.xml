@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<ScrollView
     style="@style/frameLayoutBg"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -28,7 +28,6 @@
             android:layout_marginTop="100dp"
             android:fontFamily="@font/roboto"
             android:text="User Profile"
-            android:textColor="#000000"
             android:textSize="32sp"
             android:textStyle="bold" />
 
@@ -130,4 +129,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</FrameLayout>
+</ScrollView>

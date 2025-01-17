@@ -77,7 +77,7 @@ public class CoffeeDetailsFragment extends Fragment {
         buy_now.setOnClickListener(v -> {
             if (getActivity() instanceof UserActivity) {
                 UserActivity activity = (UserActivity) getActivity();
-                activity.navigateToFragment(new CartFragment(), R.id.cartIcon);
+                activity.navigateToFragment(new CartFragment(), R.id.cartIcon, true);
             }
         });
         // Update views now that the layout is fully created

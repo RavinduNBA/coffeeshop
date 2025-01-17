@@ -48,7 +48,7 @@ public class BuyNowFragment extends Fragment {
         buy_now.setOnClickListener(v -> {
             if (getActivity() instanceof UserActivity) {
                 UserActivity activity = (UserActivity) getActivity();
-                activity.navigateToFragment(new CartFragment(), R.id.cartIcon);
+                activity.navigateToFragment(new CartFragment(), R.id.cartIcon, true);
             }
         });
 

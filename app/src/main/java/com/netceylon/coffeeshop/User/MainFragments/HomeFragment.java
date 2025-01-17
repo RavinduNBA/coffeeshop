@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment {
         imageView.setOnClickListener(v -> {
             if (getActivity() instanceof UserActivity) {
                 UserActivity activity = (UserActivity) getActivity();
-                activity.navigateToFragment(new BuyNowFragment(), R.id.buynow);
+                activity.navigateToFragment(new SpecialOffersFragment(), R.id.buynow, true);
             }
         });
 

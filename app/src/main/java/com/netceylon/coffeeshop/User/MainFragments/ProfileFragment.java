@@ -79,7 +79,7 @@ public class ProfileFragment extends Fragment {
         backtoshopping.setOnClickListener(v -> {
             if (getActivity() instanceof UserActivity) {
                 UserActivity activity = (UserActivity) getActivity();
-                activity.navigateToFragment(new HomeFragment(), R.id.homeIcon);
+                activity.navigateToFragment(new HomeFragment(), R.id.homeIcon, true);
             }
         });
 
