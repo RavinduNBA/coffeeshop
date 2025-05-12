@@ -1,5 +1,6 @@
 package com.netceylon.coffeeshop.User.MainFragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.netceylon.coffeeshop.R;
+import com.netceylon.coffeeshop.User.Ordering;
 import com.netceylon.coffeeshop.User.UserActivity;
 
 /**
@@ -24,6 +26,7 @@ import com.netceylon.coffeeshop.User.UserActivity;
 public class CartFragment extends Fragment {
 
     Button backtoshopping;
+    Button checkout;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -86,6 +89,12 @@ public class CartFragment extends Fragment {
                 UserActivity activity = (UserActivity) getActivity();
                 activity.navigateToFragment(new HomeFragment(), R.id.homeIcon, true);
             }
+        });
+
+        checkout = view.findViewById(R.id.checkoutButton);
+        checkout.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), Ordering.class);
+            startActivity(intent);
         });
 
     }
