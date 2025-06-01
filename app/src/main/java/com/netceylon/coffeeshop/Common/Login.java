@@ -76,7 +76,6 @@ public class Login extends AppCompatActivity {
             usernameEdit.setText(userData.get(SessionManager.KEY_SESSIONUSERNAME));
             passwordEdit.setText(userData.get(SessionManager.KEY_SESSIONPASSWORD));
             rememberMe.setChecked(true);
-
         }
 
 
@@ -92,15 +91,17 @@ public class Login extends AppCompatActivity {
             if (!validateFields()) {
                 return;
             }
-            if (rememberMe.isChecked()) {
-                //SessionManager sessionManager = new SessionManager(Login.this, SESSION_REMEBERME);
-                sessionManager.createRememberMeSession(usernameT, passwordT);
-            }
+
 
             progressBar.setVisibility(View.VISIBLE);
 
             usernameT = username.getEditText().getText().toString().trim();
             passwordT = password.getEditText().getText().toString().trim();
+
+            if (rememberMe.isChecked()) {
+                //SessionManager sessionManager2 = new SessionManager(Login.this, SESSION_REMEBERME);
+                sessionManager.createRememberMeSession(usernameT, passwordT);
+            }
 
 
 
