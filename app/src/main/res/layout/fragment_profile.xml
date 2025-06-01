@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    style="@style/frameLayoutBg"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    style="@style/frameLayoutBg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Common.Register">
-
 
 
     <LinearLayout
@@ -49,9 +47,9 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/profile_picture"
+                    android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    android:layout_gravity="center"/>
+                    android:src="@drawable/profile_picture" />
             </FrameLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -59,15 +57,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:hint="@string/username"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomEnd="20dp"
                 app:boxCornerRadiusBottomStart="20dp"
                 app:boxCornerRadiusTopEnd="20dp"
-                app:boxCornerRadiusTopStart="20dp">
+                app:boxCornerRadiusTopStart="20dp"
+                app:helperText="Name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/name"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:elevation="2dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Name"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/textInputStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp"
+                app:helperText="Email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    android:text="Email"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:elevation="2dp"
@@ -81,44 +103,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:hint="@string/email"
-                app:boxBackgroundMode="outline"
-                app:boxCornerRadiusBottomEnd="20dp"
-                app:boxCornerRadiusBottomStart="20dp"
-                app:boxCornerRadiusTopEnd="20dp"
-                app:boxCornerRadiusTopStart="20dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/email"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:elevation="2dp"
-                    android:fontFamily="@font/roboto"/>
-
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/textInputStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:hint="@string/password"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomEnd="20dp"
                 app:boxCornerRadiusBottomStart="20dp"
                 app:boxCornerRadiusTopEnd="20dp"
                 app:boxCornerRadiusTopStart="20dp"
+                app:helperText="Password"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#FF4747">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
+                    android:text="Password"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:elevation="2dp"
                     android:fontFamily="@font/roboto"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -127,8 +128,8 @@
                 android:id="@+id/profileEditbutton"
                 android:layout_width="160dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/colorPrimary"
                 android:text="Edit Profile"
                 android:textSize="16sp"
@@ -137,15 +138,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal">
 
                 <Button
-                    style="@style/CustomButtonStyle2"
                     android:id="@+id/backToShopping"
+                    style="@style/CustomButtonStyle2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
