@@ -45,12 +45,20 @@
                 android:background="@drawable/circular_background">
 
                 <ImageView
+                    android:id="@+id/profilePicture"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
                     android:src="@drawable/profile_picture" />
             </FrameLayout>
+
+            <Button
+                android:id="@+id/addImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Image"
+                android:layout_gravity="center"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/textInputStyle"
