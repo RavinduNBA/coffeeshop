@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 import com.netceylon.coffeeshop.R;
 import com.netceylon.coffeeshop.User.MainFragments.CoffeeDetailsFragment;
+import com.netceylon.coffeeshop.User.MainFragments.CoffeeRecyclerFragment;
 import com.netceylon.coffeeshop.User.UserActivity;
 
 
@@ -20,6 +21,7 @@ public class BobaFragment extends Fragment {
 
     ImageView imageView;
     ImageView imageView2;
+    CoffeeRecyclerFragment coffeeRecyclerFragment;
 
 
     @Override
@@ -34,6 +36,7 @@ public class BobaFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         imageView = view.findViewById(R.id.addIcon1);
+
 
         imageView.setOnClickListener(v -> {
             if (getActivity() instanceof UserActivity) {

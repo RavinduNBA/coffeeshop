@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coffeeDetailsFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Coffee Image -->
+        <ImageView
+            android:id="@+id/coffeeImage1"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Coffee image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Coffee Name -->
+        <TextView
+            android:id="@+id/coffeeName1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Coffee Name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/capriola"
+            app:layout_constraintTop_toBottomOf="@id/coffeeImage1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Ingredients -->
+        <TextView
+            android:id="@+id/ingredients1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ingredients"
+            android:textSize="14sp"
+            android:fontFamily="@font/roboto"
+            app:layout_constraintTop_toBottomOf="@id/coffeeName1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Description Label -->
+        <TextView
+            android:id="@+id/descriptionLabel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Description"
+            android:textSize="18sp"
+            android:fontFamily="@font/capriola"
+            app:layout_constraintTop_toBottomOf="@id/ingredients1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Description Text -->
+        <TextView
+            android:id="@+id/descriptionText1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Description text goes here."
+            android:textSize="14sp"
+            android:fontFamily="@font/roboto"
+            app:layout_constraintTop_toBottomOf="@id/descriptionLabel1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -71,7 +71,7 @@ public class Login extends AppCompatActivity {
 
 
         SessionManager sessionManager = new SessionManager(Login.this, SESSION_REMEBERME);
-        if (sessionManager.checkRememberMe()){
+        if (sessionManager.checkRememberMe()) {
             HashMap<String, String> userData = sessionManager.getRememberMeDetailsFromSession();
             usernameEdit.setText(userData.get(SessionManager.KEY_SESSIONUSERNAME));
             passwordEdit.setText(userData.get(SessionManager.KEY_SESSIONPASSWORD));
@@ -102,7 +102,6 @@ public class Login extends AppCompatActivity {
                 //SessionManager sessionManager2 = new SessionManager(Login.this, SESSION_REMEBERME);
                 sessionManager.createRememberMeSession(usernameT, passwordT);
             }
-
 
 
             Query checkUser = FirebaseDatabase.getInstance("https://coffeeshop-d75f8-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users").orderByChild("name").equalTo(usernameT);
@@ -234,7 +233,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    private void showCustomDialog(){
+    private void showCustomDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
         builder.setMessage("No Internet Connection").setCancelable(false).setPositiveButton("Retry", (dialog, id) -> {
