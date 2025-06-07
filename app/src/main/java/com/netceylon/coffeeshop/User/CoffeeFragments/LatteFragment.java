@@ -44,7 +44,7 @@ public class LatteFragment extends Fragment {
                         "Milk Name",
                         "Description"
                 );
-                activity.navigateToFragment(coffeeDetailsFragment, R.id.buynow);
+                activity.navigateToFragment(coffeeDetailsFragment, R.id.specialOffersFragment);
             }
         });
 
@@ -59,7 +59,7 @@ public class LatteFragment extends Fragment {
                         "Milk Name",
                         "Description"
                 );
-                activity.navigateToFragment(coffeeDetailsFragment, R.id.buynow);
+                activity.navigateToFragment(coffeeDetailsFragment, R.id.specialOffersFragment);
             }
         });
     }

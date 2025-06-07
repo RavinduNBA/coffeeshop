@@ -9,6 +9,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
@@ -17,6 +19,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.netceylon.coffeeshop.R;
 import com.netceylon.coffeeshop.User.MyViewPagerAdapter;
@@ -62,6 +65,8 @@ public class HomeFragment extends Fragment {
             return insets;
         });
 
+
+
         // Initialize TabLayout and ViewPager2
         tabLayout = view.findViewById(R.id.tablayout);
         viewPager2 = view.findViewById(R.id.viewPager);
@@ -71,11 +76,19 @@ public class HomeFragment extends Fragment {
         imageView = view.findViewById(R.id.specialPicsAdd);
 
         imageView.setOnClickListener(v -> {
-            if (getActivity() instanceof UserActivity) {
-                UserActivity activity = (UserActivity) getActivity();
-                activity.navigateToFragment(new CoffeeRecyclerFragment(), R.id.buynow, true);
+            NavController navController = NavHostFragment.findNavController(HomeFragment.this);
+            navController.navigate(R.id.coffeeRecyclerFragment);
+
+            // Deselect all bottom navigation items
+            BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottomNavigationView);
+            bottomNavigationView.getMenu().setGroupCheckable(0, true, false);
+            for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
+                bottomNavigationView.getMenu().getItem(i).setChecked(false);
             }
+            bottomNavigationView.getMenu().setGroupCheckable(0, true, true);
         });
+
+
 
         // Set up TabLayout listeners
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

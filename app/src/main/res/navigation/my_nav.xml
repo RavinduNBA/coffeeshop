@@ -24,4 +24,13 @@
         android:id="@+id/profileFragment"
         android:name="com.netceylon.coffeeshop.User.MainFragments.ProfileFragment"
         android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/coffeeRecyclerFragment"
+        android:name="com.netceylon.coffeeshop.User.MainFragments.CoffeeRecyclerFragment"
+        android:label="CoffeeRecyclerFragment" />
+    <fragment
+        android:id="@+id/coffeeDetailsFragment"
+        android:name="com.netceylon.coffeeshop.User.MainFragments.CoffeeDetailsFragment"
+        android:label="fragment_coffee_details"
+        tools:layout="@layout/fragment_coffee_details" />
 </navigation>

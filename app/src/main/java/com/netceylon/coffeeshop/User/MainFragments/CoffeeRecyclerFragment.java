@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.netceylon.coffeeshop.R;
@@ -20,6 +21,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import okhttp3.Call;
@@ -63,53 +68,72 @@ public class CoffeeRecyclerFragment extends Fragment {
 
             @Override
             public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
+                Log.e("CoffeeDetailsFragment", "API request failed", e);
+                requireActivity().runOnUiThread(() -> {
+                    Toast.makeText(getContext(), "Offline mode: loading local data", Toast.LENGTH_SHORT).show();
+                    loadFromAssets();
+                });
             }
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                if (!response.isSuccessful()) {
-                    throw new IOException("Unexpected code " + response);
-                }
-
                 if (response.body() == null) return;
 
-                String jsonData = response.body().string();
-
-                try {
-                    JSONArray jsonArray = new JSONArray(jsonData);
-
-                    if (jsonArray.length() == 0) return;
-
-                    int randomIndex = new Random().nextInt(jsonArray.length());
-                    JSONObject coffee = jsonArray.getJSONObject(randomIndex);
-
-                    String title = coffee.getString("title");
-                    String description = coffee.getString("description");
-                    String imageUrl = coffee.getString("image");
-                    JSONArray ingredientsArray = coffee.getJSONArray("ingredients");
-
-                    StringBuilder ingredientsText = new StringBuilder();
-                    for (int i = 0; i < ingredientsArray.length(); i++) {
-                        ingredientsText.append(ingredientsArray.getString(i));
-                        if (i < ingredientsArray.length() - 1) ingredientsText.append(", ");
-                    }
-
-                    requireActivity().runOnUiThread(() -> {
-                        coffeeName.setText(title);
-                        descriptionText.setText(description);
-                        ingredients.setText("Ingredients: " + ingredientsText.toString());
-
-                        Glide.with(requireContext())
-                                .load(imageUrl)
-                                .placeholder(R.drawable.coffeeboba_1)
-                                .into(coffeeImage);
-                    });
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                final String jsonData = response.body().string();
+                parseAndDisplay(jsonData);
             }
         });
+    }
+
+    private void loadFromAssets() {
+        try {
+            InputStream is = requireContext().getAssets().open("coffee_offline.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            String jsonData = new String(buffer, StandardCharsets.UTF_8);
+            parseAndDisplay(jsonData);
+        } catch (IOException e) {
+            Log.e("CoffeeDetailsFragment", "Failed to load offline JSON", e);
+        }
+    }
+
+    private void parseAndDisplay(String jsonData) {
+        try {
+            JSONArray jsonArray = new JSONArray(jsonData);
+
+            if (jsonArray.length() == 0) return;
+
+            // Select a random coffee
+            int randomIndex = new Random().nextInt(jsonArray.length());
+            JSONObject coffee = jsonArray.getJSONObject(randomIndex);
+
+            final String title = coffee.getString("title");
+            final String description = coffee.getString("description");
+            final String imageUrl = coffee.getString("image");
+
+            JSONArray ingredientsArray = coffee.getJSONArray("ingredients");
+            final StringBuilder ingredientsText = new StringBuilder();
+            for (int i = 0; i < ingredientsArray.length(); i++) {
+                ingredientsText.append(ingredientsArray.getString(i));
+                if (i < ingredientsArray.length() - 1) ingredientsText.append(", ");
+            }
+
+            requireActivity().runOnUiThread(() -> {
+                coffeeName.setText(title);
+                descriptionText.setText(description);
+                ingredients.setText("Ingredients: " + ingredientsText.toString());
+
+                Glide.with(requireContext())
+                        .load(imageUrl)
+                        .placeholder(R.drawable.coffeeboba_1)
+                        .into(coffeeImage);
+            });
+
+        } catch (JSONException e) {
+            Log.e("CoffeeDetailsFragment", "JSON parsing error", e);
+        }
     }
 }

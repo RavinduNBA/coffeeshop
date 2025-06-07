@@ -87,7 +87,7 @@ public class CartFragment extends Fragment {
         backtoshopping.setOnClickListener(v -> {
             if (getActivity() instanceof UserActivity) {
                 UserActivity activity = (UserActivity) getActivity();
-                activity.navigateToFragment(new HomeFragment(), R.id.homeIcon, true);
+                activity.navigateToFragment(new HomeFragment(), R.id.homeFragment, true);
             }
         });
 

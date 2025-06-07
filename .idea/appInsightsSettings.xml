@@ -10,9 +10,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.netceylon.coffeeshop" />
-                  <option name="mobileSdkAppId" value="1:751583557702:android:161aef0ed523a9eac53247" />
-                  <option name="projectId" value="device-streaming-29893921" />
-                  <option name="projectNumber" value="751583557702" />
+                  <option name="mobileSdkAppId" value="1:483960842694:android:f2a89e7425802a4946aac7" />
+                  <option name="projectId" value="coffeeshop-d75f8" />
+                  <option name="projectNumber" value="483960842694" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

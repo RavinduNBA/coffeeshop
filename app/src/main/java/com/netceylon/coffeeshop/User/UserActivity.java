@@ -5,6 +5,9 @@ import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.netceylon.coffeeshop.R;
@@ -23,31 +26,22 @@ public class UserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityUserBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
         EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_user);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+
+        if (navHostFragment != null) {
+            NavController navController = navHostFragment.getNavController();
+            NavigationUI.setupWithNavController(bottomNavigationView, navController);
+        }
 
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
 
 
 
-
-        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
-            int id = item.getItemId();
-
-            if (id == R.id.homeIcon) {
-                replaceFragment(new HomeFragment());
-            } else if (id == R.id.cartIcon) {
-                replaceFragment(new CartFragment());
-            } else if (id == R.id.buynow) {
-                replaceFragment(new SpecialOffersFragment());
-            } else if (id == R.id.profile) {
-                replaceFragment(new ProfileFragment());
-            }
-
-            return true;
-        });
 
 
 

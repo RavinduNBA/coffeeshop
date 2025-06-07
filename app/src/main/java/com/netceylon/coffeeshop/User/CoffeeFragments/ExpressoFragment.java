@@ -5,14 +5,18 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.netceylon.coffeeshop.R;
 import com.netceylon.coffeeshop.User.MainFragments.CoffeeDetailsFragment;
+import com.netceylon.coffeeshop.User.MainFragments.SpecialOffersFragment;
 import com.netceylon.coffeeshop.User.UserActivity;
 
 /**
@@ -38,17 +42,17 @@ public class ExpressoFragment extends Fragment {
         imageView = view.findViewById(R.id.addIcon1);
 
         imageView.setOnClickListener(v -> {
-            if (getActivity() instanceof UserActivity) {
-                UserActivity activity = (UserActivity) getActivity();
-                CoffeeDetailsFragment coffeeDetailsFragment = CoffeeDetailsFragment.newInstance(
-                        R.drawable.boba1,
-                        "Coffee Expresso",
-                        "Toast Text",
-                        "Milk Name",
-                        "Description"
-                );
-                activity.navigateToFragment(coffeeDetailsFragment, R.id.buynow);
+            // Navigate using NavController
+            NavController navController = NavHostFragment.findNavController(ExpressoFragment.this);
+            navController.navigate(R.id.coffeeDetailsFragment);
+
+            // Deselect all bottom navigation items
+            BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottomNavigationView);
+            bottomNavigationView.getMenu().setGroupCheckable(0, true, false);
+            for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
+                bottomNavigationView.getMenu().getItem(i).setChecked(false);
             }
+            bottomNavigationView.getMenu().setGroupCheckable(0, true, true);
         });
 
         imageView2 = view.findViewById(R.id.addIcon2);
@@ -62,7 +66,7 @@ public class ExpressoFragment extends Fragment {
                         "Milk Name",
                         "Description"
                 );
-                activity.navigateToFragment(coffeeDetailsFragment, R.id.buynow);
+                activity.navigateToFragment(coffeeDetailsFragment, R.id.specialOffersFragment);
             }
         });
     }

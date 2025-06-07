@@ -1,0 +1,8 @@
+[
+  {
+    "title": "[Offline] Iced Americano",
+    "description": "[Offline] A refreshing iced coffee made with espresso and cold water.",
+    "image": "https://example.com/iced_americano.jpg",
+    "ingredients": ["Espresso", "Cold Water", "Ice"]
+  }
+]
