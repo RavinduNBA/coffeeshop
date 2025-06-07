@@ -37,14 +37,6 @@ public class UserActivity extends AppCompatActivity {
             NavController navController = navHostFragment.getNavController();
             NavigationUI.setupWithNavController(bottomNavigationView, navController);
         }
-
-
-
-
-
-
-
-
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -79,5 +71,4 @@ public class UserActivity extends AppCompatActivity {
         // Highlight the menu item manually
         binding.bottomNavigationView.getMenu().findItem(bottomNavigationItemId).setChecked(true);
     }
-
 }
