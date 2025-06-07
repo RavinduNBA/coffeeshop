@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.netceylon.coffeeshop.R;
 import com.netceylon.coffeeshop.User.MainFragments.CoffeeDetailsFragment;
+import com.netceylon.coffeeshop.User.MainFragments.HomeFragment;
 import com.netceylon.coffeeshop.User.MainFragments.SpecialOffersFragment;
 import com.netceylon.coffeeshop.User.UserActivity;
 
@@ -42,11 +43,20 @@ public class ExpressoFragment extends Fragment {
         imageView = view.findViewById(R.id.addIcon1);
 
         imageView.setOnClickListener(v -> {
-            // Navigate using NavController
             NavController navController = NavHostFragment.findNavController(ExpressoFragment.this);
-            navController.navigate(R.id.coffeeDetailsFragment);
 
-            // Deselect all bottom navigation items
+            ExpressoFragmentDirections.ActionExpressoFragmentToCoffeeDetailsFragment action =
+                    ExpressoFragmentDirections.actionExpressoFragmentToCoffeeDetailsFragment(
+                            R.drawable.boba1,
+                            "Coffee Expresso",
+                            "Toast Text",
+                            "Milk Name",
+                            "Description"
+                    );
+
+            navController.navigate(action);
+
+            // Deselect bottom nav items
             BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottomNavigationView);
             bottomNavigationView.getMenu().setGroupCheckable(0, true, false);
             for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
@@ -54,7 +64,6 @@ public class ExpressoFragment extends Fragment {
             }
             bottomNavigationView.getMenu().setGroupCheckable(0, true, true);
         });
-
         imageView2 = view.findViewById(R.id.addIcon2);
         imageView2.setOnClickListener(v -> {
             if (getActivity() instanceof UserActivity) {

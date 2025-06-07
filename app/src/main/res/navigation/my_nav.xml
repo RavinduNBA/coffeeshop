@@ -6,6 +6,16 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
+        android:id="@+id/expressoFragment"
+        android:name="com.netceylon.coffeeshop.User.CoffeeFragments.ExpressoFragment"
+        android:label="ExpressoFragment"
+        tools:layout="@layout/fragment_expresso">
+
+        <action
+            android:id="@+id/action_expressoFragment_to_coffeeDetailsFragment"
+            app:destination="@id/coffeeDetailsFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/homeFragment"
         android:name="com.netceylon.coffeeshop.User.MainFragments.HomeFragment"
         android:label="fragment_home"
@@ -32,5 +42,21 @@
         android:id="@+id/coffeeDetailsFragment"
         android:name="com.netceylon.coffeeshop.User.MainFragments.CoffeeDetailsFragment"
         android:label="fragment_coffee_details"
-        tools:layout="@layout/fragment_coffee_details" />
+        tools:layout="@layout/fragment_coffee_details" >
+        <argument
+            android:name="imageResId"
+            app:argType="integer" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="toastText"
+            app:argType="string" />
+        <argument
+            android:name="milkName"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+    </fragment>
 </navigation>

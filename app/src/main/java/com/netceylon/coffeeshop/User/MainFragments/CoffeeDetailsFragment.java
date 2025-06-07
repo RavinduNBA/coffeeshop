@@ -72,7 +72,16 @@ public class CoffeeDetailsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        CoffeeDetailsFragmentArgs args = CoffeeDetailsFragmentArgs.fromBundle(getArguments());
+
+        int imageResId = args.getImageResId();
+        String title = args.getTitle();
+        String toastText = args.getToastText();
+        String milkName = args.getMilkName();
+        String description = args.getDescription();
+
         buy_now = view.findViewById(R.id.buttonbuynow);
+
 
         buy_now.setOnClickListener(v -> {
             if (getActivity() instanceof UserActivity) {
