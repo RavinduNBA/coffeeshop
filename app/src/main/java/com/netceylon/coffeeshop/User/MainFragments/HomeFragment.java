@@ -25,6 +25,9 @@ import com.netceylon.coffeeshop.R;
 import com.netceylon.coffeeshop.User.MyViewPagerAdapter;
 import com.netceylon.coffeeshop.User.UserActivity;
 
+import java.util.Arrays;
+import java.util.List;
+
 
 public class HomeFragment extends Fragment {
 
@@ -70,7 +73,8 @@ public class HomeFragment extends Fragment {
         // Initialize TabLayout and ViewPager2
         tabLayout = view.findViewById(R.id.tablayout);
         viewPager2 = view.findViewById(R.id.viewPager);
-        myViewPagerAdapter = new MyViewPagerAdapter(requireActivity());
+        List<String> categories = Arrays.asList("Expresso", "Latte", "Cappuccino", "Boba");
+        myViewPagerAdapter = new MyViewPagerAdapter(requireActivity(), categories);
         viewPager2.setAdapter(myViewPagerAdapter);
 
         imageView = view.findViewById(R.id.specialPicsAdd);
