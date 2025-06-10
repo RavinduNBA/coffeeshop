@@ -43,18 +43,18 @@ public class ExpressoFragment extends Fragment {
         imageView = view.findViewById(R.id.addIcon1);
 
         imageView.setOnClickListener(v -> {
-            NavController navController = NavHostFragment.findNavController(ExpressoFragment.this);
-
-            ExpressoFragmentDirections.ActionExpressoFragmentToCoffeeDetailsFragment action =
-                    ExpressoFragmentDirections.actionExpressoFragmentToCoffeeDetailsFragment(
-                            R.drawable.boba1,
-                            "Coffee Expresso",
-                            "Toast Text",
-                            "Milk Name",
-                            "Description"
-                    );
-
-            navController.navigate(action);
+            if (getActivity() instanceof UserActivity) {
+                UserActivity activity = (UserActivity) getActivity();
+                CoffeeDetailsFragment coffeeDetailsFragment = CoffeeDetailsFragment.newInstance(
+                        R.drawable.mangoboba_1__1_,
+                        "Coffee Expresso2",
+                        "Toast Text",
+                        "Milk Name",
+                        "Description"
+                );
+                activity.setBottomNavigationVisibility(false);
+                activity.navigateToFragment(coffeeDetailsFragment, R.id.specialOffersFragment);
+            }
 
             // Deselect bottom nav items
             BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottomNavigationView);
@@ -75,6 +75,7 @@ public class ExpressoFragment extends Fragment {
                         "Milk Name",
                         "Description"
                 );
+                activity.setBottomNavigationVisibility(false);
                 activity.navigateToFragment(coffeeDetailsFragment, R.id.specialOffersFragment);
             }
         });

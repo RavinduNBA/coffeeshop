@@ -1,6 +1,7 @@
 package com.netceylon.coffeeshop.User;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,10 +33,18 @@ public class UserActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        View bottomNavOverlay = findViewById(R.id.bottomNavOverlay);
 
         if (navHostFragment != null) {
             NavController navController = navHostFragment.getNavController();
             NavigationUI.setupWithNavController(bottomNavigationView, navController);
+            navController.addOnDestinationChangedListener((controller, destination, args) -> {
+                if (destination.getId() == R.id.coffeeDetailsFragment) {
+                    bottomNavOverlay.setVisibility(View.VISIBLE);
+                } else {
+                    bottomNavOverlay.setVisibility(View.GONE);
+                }
+            });
         }
     }
 
@@ -49,17 +58,25 @@ public class UserActivity extends AppCompatActivity {
     }
 
     public void navigateToFragment(Fragment fragment, int bottomNavigationItemId) {
-        // Call the overloaded method with false to skip highlightMenuItem by default
-        navigateToFragment(fragment, bottomNavigationItemId, false);
+        // Calls with default: no highlight, show bottom nav
+        navigateToFragment(fragment, bottomNavigationItemId, false, true);
     }
 
     public void navigateToFragment(Fragment fragment, int bottomNavigationItemId, boolean shouldHighlight) {
+        // Calls with default: show bottom nav
+        navigateToFragment(fragment, bottomNavigationItemId, shouldHighlight, true);
+    }
+
+    public void navigateToFragment(Fragment fragment, int bottomNavigationItemId, boolean shouldHighlight, boolean showBottomNav) {
         // Replace the fragment
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .addToBackStack(null)
                 .commit();
+
+        // Show or hide BottomNavigationView
+        setBottomNavigationVisibility(showBottomNav);
 
         // Update the BottomNavigationView selection if shouldHighlight is true
         if (shouldHighlight) {
@@ -70,5 +87,14 @@ public class UserActivity extends AppCompatActivity {
     public void highlightMenuItem(int bottomNavigationItemId) {
         // Highlight the menu item manually
         binding.bottomNavigationView.getMenu().findItem(bottomNavigationItemId).setChecked(true);
+    }
+
+
+
+    public void setBottomNavigationVisibility(boolean isVisible) {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        if (bottomNavigationView != null) {
+            bottomNavigationView.setVisibility(isVisible ? View.VISIBLE : View.GONE);
+        }
     }
 }

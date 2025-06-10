@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Common.Register">
+    tools:context=".Common.Register"
+    android:layout_marginBottom="50dp">
 
 
     <LinearLayout

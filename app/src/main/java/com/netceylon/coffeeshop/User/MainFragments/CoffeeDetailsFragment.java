@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,13 +74,6 @@ public class CoffeeDetailsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        CoffeeDetailsFragmentArgs args = CoffeeDetailsFragmentArgs.fromBundle(getArguments());
-
-        int imageResId = args.getImageResId();
-        String title = args.getTitle();
-        String toastText = args.getToastText();
-        String milkName = args.getMilkName();
-        String description = args.getDescription();
 
         buy_now = view.findViewById(R.id.buttonbuynow);
 
@@ -89,6 +84,11 @@ public class CoffeeDetailsFragment extends Fragment {
                 activity.navigateToFragment(new CartFragment(), R.id.cartFragment, true);
             }
         });
+
+//        buy_now.setOnClickListener(v -> {
+//            NavController navController = NavHostFragment.findNavController(this);
+//            navController.navigate(R.id.cartFragment);
+//        });
         // Update views now that the layout is fully created
         updateCoffeeDetails(view);
     }
@@ -115,5 +115,12 @@ public class CoffeeDetailsFragment extends Fragment {
         // Update the description text
         TextView descriptionText = view.findViewById(R.id.descriptionText);
         descriptionText.setText(description);
+    }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (getActivity() instanceof UserActivity) {
+            ((UserActivity) getActivity()).setBottomNavigationVisibility(true);
+        }
     }
 }

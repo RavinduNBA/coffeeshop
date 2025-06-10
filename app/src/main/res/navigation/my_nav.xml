@@ -41,22 +41,9 @@
     <fragment
         android:id="@+id/coffeeDetailsFragment"
         android:name="com.netceylon.coffeeshop.User.MainFragments.CoffeeDetailsFragment"
-        android:label="fragment_coffee_details"
-        tools:layout="@layout/fragment_coffee_details" >
-        <argument
-            android:name="imageResId"
-            app:argType="integer" />
-        <argument
-            android:name="title"
-            app:argType="string" />
-        <argument
-            android:name="toastText"
-            app:argType="string" />
-        <argument
-            android:name="milkName"
-            app:argType="string" />
-        <argument
-            android:name="description"
-            app:argType="string" />
+        android:label="Coffee Details">
+        <action
+            android:id="@+id/action_coffeeDetailsFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
 </navigation>

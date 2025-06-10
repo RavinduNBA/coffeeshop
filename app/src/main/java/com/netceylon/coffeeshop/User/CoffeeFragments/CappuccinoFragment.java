@@ -39,9 +39,9 @@ public class CappuccinoFragment extends Fragment {
                 UserActivity activity = (UserActivity) getActivity();
                 CoffeeDetailsFragment coffeeDetailsFragment = CoffeeDetailsFragment.newInstance(
                         R.drawable.boba1,
-                        "Coffee Cappu",
-                        "Toast Text",
-                        "Milk Name",
+                        "Wet Cappuccino",
+                        "Arabica Beans",
+                        "Steamed Milk",
                         "Description"
                 );
                 activity.navigateToFragment(coffeeDetailsFragment, R.id.specialOffersFragment);

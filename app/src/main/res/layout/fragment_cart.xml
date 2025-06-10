@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.MainFragments.CartFragment">
+    tools:context=".User.MainFragments.CartFragment"
+    android:layout_marginVertical="70dp">
 
 
     <TextView

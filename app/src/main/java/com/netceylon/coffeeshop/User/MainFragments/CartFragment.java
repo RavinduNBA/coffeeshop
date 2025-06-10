@@ -23,7 +23,7 @@ import com.netceylon.coffeeshop.User.UserActivity;
  */
 
 
-public class CartFragment extends Fragment {
+public class  CartFragment extends Fragment {
 
     Button backtoshopping;
     Button checkout;
